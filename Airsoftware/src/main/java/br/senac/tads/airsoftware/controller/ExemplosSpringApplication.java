@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EntityScan (basePackages = "br.senac.tads.airsoftware.model")
-@ComponentScan({"br"})
+@ComponentScan({"br.*"})
 public class ExemplosSpringApplication {
 
     public static void main(String[] args) {
