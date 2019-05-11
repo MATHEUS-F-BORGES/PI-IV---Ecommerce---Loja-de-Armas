@@ -5,10 +5,15 @@
  */
 package br.sena.tads.airsoftware.repository;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  *
  * @author victo
  */
+@Repository
+@Transactional
 public interface VendaRepository {
     
 }

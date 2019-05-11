@@ -7,11 +7,15 @@ package br.sena.tads.airsoftware.repository;
 
 import br.senac.tads.airsoftware.model.Cliente;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author victor
  */
+@Repository
+@Transactional
 public interface ClienteRepository extends CrudRepository<Cliente, Long>{
     
 }
