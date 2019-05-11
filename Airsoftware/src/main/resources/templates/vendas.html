@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html layout:decorate="~{teste}">
   <head>
     <title>AirSoftware</title>
     <meta charset="utf-8">
@@ -22,68 +22,7 @@
   </head>
   <body>
   
-  <div class="site-wrap">
-    <header class="site-navbar" role="banner">
-      <div class="site-navbar-top">
-        <div class="container">
-          <div class="row align-items-center">
-
-            <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-              <form class="navbar-form navbar-right" role="search">
-               <div class="input-group">
-               <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-               <div class="input-group-btn">
-                <button class="btn btn-secondary btn-sm " type="submit"><span class="icon icon-search2"></span>
-                </button>
-               </div>
-               </div>
-              </form>
-            </div>
-
-            <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
-              <div class="site-logo">
-                <a href="index.html" class="js-logo-clone">AirSoftware</a>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 order-3 order-md-3 text-right">
-              <div class="site-top-icons">
-                <ul>
-                  <li><a href="login.html"><span class="icon icon-person"></span></a></li>
-                  <li>
-                    <a href="carrinho.html" class="site-cart">
-                      <span class="icon icon-shopping_cart"></span>
-                      <span class="count">1</span>
-                    </a>
-                  </li> 
-                  <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
-                </ul>
-              </div> 
-            </div>
-
-          </div>
-        </div>
-      </div> 
-      <nav class="site-navigation text-right text-md-center" role="navigation">
-        <div class="container">
-          <ul class="site-menu js-clone-nav d-none d-md-block">
-            <li><a href="armas.html">Armas</a></li>
-			<li><a href="acessorios.html">Acessórios</a></li>
-			<li><a href="pedidos.html">Meus Pedidos</a></li>
-            <li class="has-children">
-              <a href="#">Produtos</a>
-              <ul class="dropdown">
-                <li><a href="cadastrar_produto.html">Cadastrar</a></li>
-                <li><a href="pesquisar.html">Pesquisar</a></li>
-              </ul>
-            </li>
-            <li><a href="pesquisar_clientes.html">Clientes</a></li>
-			<li><a href="estoque.html">Estoque</a></li>
-
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <div class="site-wrap" layout:fragment="conteudo">
 
     <div class="site-section">
       <div class="container">

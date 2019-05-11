@@ -17,8 +17,7 @@ public class IndexController {
 
         return "index";
     }
-    
-    
+
      @GetMapping("/login")
     public String login() {
 
@@ -32,9 +31,6 @@ public class IndexController {
         return "carrinho";
     }
     
-    
-    
-
     @GetMapping("/pesquisar")
     public String pesquisar() {
 
@@ -51,27 +47,47 @@ public class IndexController {
 
         return "acessorios";
     }
-      @GetMapping("/pedidos")
+    @GetMapping("/pedidos")
     public String pedidos() {
 
         return "pedidos";
     }
     
-    
-      @GetMapping("/cadastrar_produto")
+    @GetMapping("/cadastrar_produto")
     public String cadastrar_produto() {
 
         return "cadastrar_produto";
     }
-       @GetMapping("/pesquisar_clientes")
+    
+    @GetMapping("/cadastrar_cliente")
+    public String cadastrar_cliente() {
+
+        return "cadastrar_cliente";
+    }
+    
+    @GetMapping("/pesquisar_clientes")
     public String pesquisar_clientes() {
 
         return "pesquisar_clientes";
     }
-       @GetMapping("/estoque")
+    
+    
+    @GetMapping("/produto")
+    public String produto() {
+
+        return "produto";
+    }
+    
+    @GetMapping("/estoque")
     public String estoque() {
 
         return "estoque";
+    }
+    
+    @GetMapping("/vendas")
+    public String vendas() {
+
+        return "vendas";
     }
 
 }
