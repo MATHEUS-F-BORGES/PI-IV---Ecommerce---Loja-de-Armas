@@ -26,7 +26,6 @@ public class Venda implements Serializable {
     private Long id;
     @Column(precision = 6, scale = 2, nullable = false)
     private BigDecimal valor;
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false, insertable = true, updatable = false)
     private LocalDateTime dataVenda;
     @Column(nullable = false)
@@ -40,11 +39,9 @@ public class Venda implements Serializable {
     @Column(nullable = false)
     private String statusVenda;
     
-    private Set<Produto> produtos;
-    @OneToOne(mappedBy = "venda")
-    private Carrinho carrinho;
-    @OneToMany
-    private Cliente cliente;
+//    private Set<Produto> produtos;
+//    private Carrinho carrinho;
+//    private Cliente cliente;
 
     public Venda() {
     }
@@ -124,28 +121,28 @@ public class Venda implements Serializable {
         this.statusVenda = statusVenda;
     }
 
-    public Set<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(Set<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
-    public Carrinho getCarrinho() {
-        return carrinho;
-    }
-
-    public void setCarrinho(Carrinho carrinho) {
-        this.carrinho = carrinho;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-    
+//    public Set<Produto> getProdutos() {
+//        return produtos;
+//    }
+//
+//    public void setProdutos(Set<Produto> produtos) {
+//        this.produtos = produtos;
+//    }
+//
+//    public Carrinho getCarrinho() {
+//        return carrinho;
+//    }
+//
+//    public void setCarrinho(Carrinho carrinho) {
+//        this.carrinho = carrinho;
+//    }
+//
+//    public Cliente getCliente() {
+//        return cliente;
+//    }
+//
+//    public void setCliente(Cliente cliente) {
+//        this.cliente = cliente;
+//    }
+//    
 }

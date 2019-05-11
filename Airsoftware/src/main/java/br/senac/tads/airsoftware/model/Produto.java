@@ -39,17 +39,10 @@ public class Produto implements Serializable {
     private int quantidade;
     private String categoria;
     private String subCategoria;
-    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
-    private Set<ImagemProduto> imagens;
+///    private Set<ImagemProduto> imagens;
     @Column(nullable = false, insertable = true, updatable = false)
     private LocalDateTime dataCadastro;
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "produto_carrinho",
-            joinColumns = @JoinColumn(name = "idProduto"),
-            inverseJoinColumns = @JoinColumn(name = "idCarrinho")
-    )
-    private Carrinho carrinho;
+ //   private Carrinho carrinho;
 
     public Produto() {
     }
@@ -77,7 +70,7 @@ public class Produto implements Serializable {
         this.quantidade = quantidade;
         this.categoria = categoria;
         this.subCategoria = subCategoria;
-        this.imagens = imagens;
+//        this.imagens = imagens;
         this.dataCadastro = dataCadastro;
     }
 
@@ -153,13 +146,13 @@ public class Produto implements Serializable {
         this.subCategoria = subCategoria;
     }
 
-    public Set<ImagemProduto> getImagens() {
-        return imagens;
-    }
-
-    public void setImagens(Set<ImagemProduto> imagens) {
-        this.imagens = imagens;
-    }
+//    public Set<ImagemProduto> getImagens() {
+//        return imagens;
+//    }
+//
+//    public void setImagens(Set<ImagemProduto> imagens) {
+//        this.imagens = imagens;
+//    }
 
     public LocalDateTime getDataCadastro() {
         return dataCadastro;
@@ -169,12 +162,12 @@ public class Produto implements Serializable {
         this.dataCadastro = dataCadastro;
     }
 
-    public Carrinho getCarrinho() {
-        return carrinho;
-    }
-
-    public void setCarrinho(Carrinho carrinho) {
-        this.carrinho = carrinho;
-    }
+//    public Carrinho getCarrinho() {
+//        return carrinho;
+//    }
+//
+//    public void setCarrinho(Carrinho carrinho) {
+//        this.carrinho = carrinho;
+//    }
     
 }

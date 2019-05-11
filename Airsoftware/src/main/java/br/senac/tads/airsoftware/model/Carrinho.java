@@ -25,8 +25,7 @@ public class Carrinho implements Serializable {
     private int quantidade;
     @Column(precision = 6, scale = 2, nullable = false)
     private BigDecimal valor;
-    @ManyToMany(mappedBy = "carrinho", fetch = FetchType.LAZY)
-    private Set<Produto> produtos;
+//    private Set<Produto> produtos;
     
     public Carrinho() {
     }
@@ -61,12 +60,12 @@ public class Carrinho implements Serializable {
         this.valor = valor;
     }
 
-    public Set<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(Set<Produto> produtos) {
-        this.produtos = produtos;
-    }
+//    public Set<Produto> getProdutos() {
+//        return produtos;
+//    }
+//
+//    public void setProdutos(Set<Produto> produtos) {
+//        this.produtos = produtos;
+//    }
     
 }

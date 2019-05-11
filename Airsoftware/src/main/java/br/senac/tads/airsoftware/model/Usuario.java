@@ -24,8 +24,7 @@ public class Usuario implements Serializable {
     @Column(nullable = false)
     private String hashSenha;
     
-    private List<Papel> papeis;
-    @OneToOne(mappedBy = "usuario")
+    //private List<Papel> papeis;
     private Cliente cliente;
 
     public Usuario() {
@@ -35,7 +34,7 @@ public class Usuario implements Serializable {
         this.id = id;
         this.email = email;
         this.hashSenha = hashSenha;
-        this.papeis = papeis;
+        //this.papeis = papeis;
     }
 
     public Long getId() {
@@ -62,26 +61,26 @@ public class Usuario implements Serializable {
 //        this.hashSenha = BCrypt.hashpw(senhaAberta, BCrypt.gensalt());
 //    }
 
-    public List<Papel> getPapeis() {
-        return papeis;
-    }
-
-    public void setPapeis(List<Papel> papeis) {
-        this.papeis = papeis;
-    }
+//    public List<Papel> getPapeis() {
+//        return papeis;
+//    }
+//
+//    public void setPapeis(List<Papel> papeis) {
+//        this.papeis = papeis;
+//    }
 
 //    public boolean validarSenha(String senhaAberta) {
 //        return BCrypt.checkpw(senhaAberta, hashSenha);
 //    }
 
-    public boolean verificarPapel(String nomePapel) {
-        for (Papel p : papeis) {
-            if (p.getNome().equals(nomePapel)) {
-                return true;
-            }
-        }
-        return false;
-    }
+//    public boolean verificarPapel(String nomePapel) {
+//        for (Papel p : papeis) {
+//            if (p.getNome().equals(nomePapel)) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
     public Cliente getCliente() {
         return cliente;
