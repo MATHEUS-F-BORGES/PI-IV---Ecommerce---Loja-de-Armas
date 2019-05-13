@@ -9,7 +9,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -25,7 +28,13 @@ public class Carrinho implements Serializable {
     private int quantidade;
     @Column(precision = 6, scale = 2, nullable = false)
     private BigDecimal valor;
-//    private Set<Produto> produtos;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Cliente cliente;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "carrinho_produto",
+            joinColumns = @JoinColumn(name = "carrinho_id"),
+            inverseJoinColumns = @JoinColumn(name = "produto_id"))
+    private Set<Produto> produtos;
     
     public Carrinho() {
     }
@@ -59,13 +68,21 @@ public class Carrinho implements Serializable {
     public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
+    
+    public Set<Produto> getProdutos() {
+        return produtos;
+    }
 
-//    public Set<Produto> getProdutos() {
-//        return produtos;
-//    }
-//
-//    public void setProdutos(Set<Produto> produtos) {
-//        this.produtos = produtos;
-//    }
+    public void setProdutos(Set<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
     
 }

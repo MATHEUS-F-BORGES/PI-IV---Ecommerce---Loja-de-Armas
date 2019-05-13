@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.sena.tads.airsoftware.repository;
+package br.senac.tads.airsoftware.repository;
 
-import br.senac.tads.airsoftware.model.Cliente;
+import br.senac.tads.airsoftware.model.Carrinho;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public interface ClienteRepository extends CrudRepository<Cliente, Long>{
+public interface CarrinhoRepository extends CrudRepository<Carrinho, Long>{
     
 }

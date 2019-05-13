@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -23,9 +22,6 @@ public class Usuario implements Serializable {
     private String email;
     @Column(nullable = false)
     private String hashSenha;
-    
-    //private List<Papel> papeis;
-    private Cliente cliente;
 
     public Usuario() {
     }
@@ -81,14 +77,4 @@ public class Usuario implements Serializable {
 //        }
 //        return false;
 //    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    
 }

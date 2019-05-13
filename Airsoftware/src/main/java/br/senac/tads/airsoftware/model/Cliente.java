@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,8 +51,10 @@ public class Cliente implements Serializable {
     private String celular;
     @Column(nullable = false)
     private String telefone;
-    //   private Usuario usuario;
-    // private List<Venda> vendas;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Usuario usuario;
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
+     private List<Venda> vendas;
 
     public Cliente() {
     }
@@ -181,19 +184,19 @@ public class Cliente implements Serializable {
         this.telefone = telefone;
     }
 
-//    public Usuario getUsuario() {
-//        return usuario;
-//    }
-//
-//    public void setUsuario(Usuario usuario) {
-//        this.usuario = usuario;
-//    }
-//
-//    public List<Venda> getVendas() {
-//        return vendas;
-//    }
-//
-//    public void setVendas(List<Venda> vendas) {
-//        this.vendas = vendas;
-//    }
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Venda> getVendas() {
+        return vendas;
+    }
+
+    public void setVendas(List<Venda> vendas) {
+        this.vendas = vendas;
+    }
 }

@@ -10,8 +10,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
@@ -39,10 +37,12 @@ public class Produto implements Serializable {
     private int quantidade;
     private String categoria;
     private String subCategoria;
-///    private Set<ImagemProduto> imagens;
+    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    private Set<ImagemProduto> imagens;
     @Column(nullable = false, insertable = true, updatable = false)
     private LocalDateTime dataCadastro;
- //   private Carrinho carrinho;
+    @ManyToMany(mappedBy = "produtos", fetch = FetchType.LAZY)
+    private Set<Carrinho> carrinho;
 
     public Produto() {
     }
@@ -70,7 +70,7 @@ public class Produto implements Serializable {
         this.quantidade = quantidade;
         this.categoria = categoria;
         this.subCategoria = subCategoria;
-//        this.imagens = imagens;
+        this.imagens = imagens;
         this.dataCadastro = dataCadastro;
     }
 
@@ -146,13 +146,13 @@ public class Produto implements Serializable {
         this.subCategoria = subCategoria;
     }
 
-//    public Set<ImagemProduto> getImagens() {
-//        return imagens;
-//    }
-//
-//    public void setImagens(Set<ImagemProduto> imagens) {
-//        this.imagens = imagens;
-//    }
+    public Set<ImagemProduto> getImagens() {
+        return imagens;
+    }
+
+    public void setImagens(Set<ImagemProduto> imagens) {
+        this.imagens = imagens;
+    }
 
     public LocalDateTime getDataCadastro() {
         return dataCadastro;
@@ -162,12 +162,12 @@ public class Produto implements Serializable {
         this.dataCadastro = dataCadastro;
     }
 
-//    public Carrinho getCarrinho() {
-//        return carrinho;
-//    }
-//
-//    public void setCarrinho(Carrinho carrinho) {
-//        this.carrinho = carrinho;
-//    }
+    public Set<Carrinho> getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(Set<Carrinho> carrinho) {
+        this.carrinho = carrinho;
+    }
     
 }

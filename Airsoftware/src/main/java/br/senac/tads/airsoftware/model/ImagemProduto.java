@@ -24,7 +24,10 @@ public class ImagemProduto implements Serializable {
     private String caminho;
     @Column(nullable = false)
     private String legenda;
- //   private Produto produto;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "produto_id")
+    private Produto produto;
 
     public ImagemProduto() {
     }
@@ -59,13 +62,13 @@ public class ImagemProduto implements Serializable {
         this.legenda = legenda;
     }
 
-//    public Produto getProduto() {
-//        return produto;
-//    }
-//
-//    public void setProduto(Produto produto) {
-//        this.produto = produto;
-//    }
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
     
     
 }
