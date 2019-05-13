@@ -60,7 +60,7 @@ public class Produto implements Serializable {
         this.dataCadastro = dataCadastro;
     }
 
-    public Produto(Long id, String nome, BigDecimal precoCompra, BigDecimal precoVenda, String descricao, String informacoes, int quantidade, String categoria, String subCategoria, Set<ImagemProduto> imagens, LocalDateTime dataCadastro) {
+    public Produto(Long id, String nome, BigDecimal precoCompra, BigDecimal precoVenda, String descricao, String informacoes, int quantidade, String categoria, String subCategoria, Set<ImagemProduto> imagens, LocalDateTime dataCadastro, Set<Carrinho> carrinho) {
         this.id = id;
         this.nome = nome;
         this.precoCompra = precoCompra;
@@ -72,7 +72,10 @@ public class Produto implements Serializable {
         this.subCategoria = subCategoria;
         this.imagens = imagens;
         this.dataCadastro = dataCadastro;
+        this.carrinho = carrinho;
     }
+
+    
 
     public Long getId() {
         return id;
@@ -169,5 +172,21 @@ public class Produto implements Serializable {
     public void setCarrinho(Set<Carrinho> carrinho) {
         this.carrinho = carrinho;
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" + "id=" + id + 
+                ", nome=" + nome + 
+                ", precoCompra=" + precoCompra + 
+                ", precoVenda=" + precoVenda + 
+                ", descricao=" + descricao + 
+                ", informacoes=" + informacoes + 
+                ", quantidade=" + quantidade + 
+                ", categoria=" + categoria + 
+                ", subCategoria=" + subCategoria + 
+                ", dataCadastro=" + dataCadastro + 
+                ", carrinho=" + carrinho + '}';
+    }
+    
     
 }
