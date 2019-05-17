@@ -3,16 +3,12 @@ package br.senac.tads.airsoftware.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  *
@@ -24,42 +20,42 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String sexo;
-    @Temporal(TemporalType.DATE)
-    @Column(updatable = false, insertable = true, nullable = false)
+    //@Temporal(TemporalType.DATE)
+    //@Column(updatable = false, insertable = true, nullable = false)
     private Date dataNascimento;
-    @Column(unique = true, nullable = false)
+   // @Column(unique = true, nullable = false)
     private String cpf;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String logradouro;
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private int numero;
-    @Column(nullable = false)
+   //@Column(nullable = false)
     private String cidade;
-    @Column(nullable = false)
+   // @Column(nullable = false)
     private String estado;
-    @Column(nullable = false)
+   // @Column(nullable = false)
     private String bairro;
-    @Column(nullable = false)
+   // @Column(nullable = false)
     private String cep;
-    @Column
+    //@Column
     private String complemento;
-    @Column
+    //@Column
     private String celular;
-    @Column(nullable = false)
+   // @Column(nullable = false)
     private String telefone;
-    @OneToOne(fetch = FetchType.LAZY)
-    private Usuario usuario;
+//    @OneToOne(fetch = FetchType.LAZY) 
+//    private Usuario usuario;
     @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
      private List<Venda> vendas;
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String sexo, Date dataNascimento, String cpf, String logradouro, int numero, String cidade, String estado, String bairro, String cep, String complemento, String celular, String telefone, Usuario usuario) {
+    public Cliente(Long id, String nome, String sexo, Date dataNascimento, String cpf, String logradouro, int numero, String cidade, String estado, String bairro, String cep, String complemento, String celular, String telefone) {
         this.id = id;
         this.nome = nome;
         this.sexo = sexo;
@@ -184,13 +180,13 @@ public class Cliente implements Serializable {
         this.telefone = telefone;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+//    public Usuario getUsuario() {
+//        return usuario;
+//    }
+//
+//    public void setUsuario(Usuario usuario) {
+//        this.usuario = usuario;
+//    }
 
     public List<Venda> getVendas() {
         return vendas;
@@ -199,4 +195,26 @@ public class Cliente implements Serializable {
     public void setVendas(List<Venda> vendas) {
         this.vendas = vendas;
     }
+    
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + 
+                ", nome=" + nome + 
+                ", dataNascimento=" + dataNascimento + 
+                ", sexo=" + sexo + 
+                ", cpf=" + cpf + 
+                ", logradouro=" + logradouro + 
+                ", numero=" + numero + 
+                ", cidade=" + cidade + 
+                ", estado=" + estado + 
+                ", bairro=" + bairro + 
+                ", cep=" + cep + 
+                ", complemento=" + complemento + 
+                ", celular=" + celular + 
+                ", telefone=" + telefone + '}';
+    }
 }
+
+
+     
+   

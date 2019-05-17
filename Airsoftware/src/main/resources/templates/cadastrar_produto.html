@@ -1,149 +1,154 @@
 <!DOCTYPE html>
 <html layout:decorate="~{teste}">
-  <head>
-    <title>AirSoftware</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>AirSoftware</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 
-    <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
-  <body>
-  
-  <div class="site-wrap" layout:fragment="conteudo">
+        <link rel="stylesheet" href="css/style.css">
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="h3 mb-3 text-black">Cadastrar Produtos</h2>
-          </div>
-          <div class="col-md-7">
+    </head>
+    <body>
 
-            <form action="#" method="post">
-              
-              <div class="p-3 p-lg-5 border">
-			    <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_subject" class="text-black">Nome </label>
-                    <input type="text" class="form-control" id="c_subject" name="c_subject">
-                  </div>
+        <div class="site-wrap" layout:fragment="conteudo">
+
+            <div class="site-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="h3 mb-3 text-black">Cadastrar Produtos</h2>
+                        </div>
+
+                        <form action="/salvar" method="post">  
+                            <div class="col-md-12">
+
+                                <div class="p-3 p-lg-5 border">
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_subject" class="text-black">Nome </label>
+                                            <input type="text" class="form-control" id="c_subject" name="nome">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <label for="c_fname" class="text-black">Preço Compra<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="c_fname" name="precoCompra">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="c_fname" class="text-black">Preço Venda<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="c_fname" name="precoVenda">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="c_lname" class="text-black">Quantidade <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="c_lname" name="quantidade">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_message" class="text-black">Descrição </label>
+                                            <textarea name="descricao" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <label for="c_fname" class="text-black">Categoria <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="c_fname" name="categoria">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="c_lname" class="text-black">Sub-Categoria <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="c_lname" name="subCategoria">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_message" class="text-black">Informações </label>
+                                            <textarea name="informacoes" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="p-3 p-lg-5 border">
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_message" class="text-black">Imagem </label>
+                                            <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Remover">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Upload">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-12">
+                                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Limpar">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-12">
+                                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Salvar">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="c_fname" class="text-black">Preço <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="c_fname">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="c_lname" class="text-black">Quantidade <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_lname" name="c_lname">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_message" class="text-black">Descrição </label>
-                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
-                  </div>
-                </div>
-				
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="c_fname" class="text-black">Categoria <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="c_fname">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="c_lname" class="text-black">Sub-Categoria <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_lname" name="c_lname">
-                  </div>
-                </div>
+            </div>
 
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_message" class="text-black">Informações </label>
-                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-		  
-		  <div class="col-md-5">
+            <footer class="site-footer border-top">
+                <div class="container">
+                    <div class="row pt-5 mt-5 text-center">
+                        <div class="col-md-12">
+                            <p>
+                                Copyright @2019 All rights reserved
+                            </p>
+                        </div>
 
-			            <form action="#" method="post">
-              
-              <div class="p-3 p-lg-5 border">
+                    </div>
+                </div>
+            </footer>
 
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_message" class="text-black">Imagem </label>
-                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Remover">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Upload">
-                  </div>
-                </div>
-				
-				<div class="form-group row">
-                  <div class="col-lg-12">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Limpar">
-                  </div>
-                </div>
-				
-				<div class="form-group row">
-                  <div class="col-lg-12">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Cadastrar">
-                  </div>
-                </div>
-              </div>
-            </form>
-
-          </div>
-		  
         </div>
-      </div>
-    </div>
 
-	<footer class="site-footer border-top">
-      <div class="container">
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <p>
-            Copyright @2019 All rights reserved
-            </p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
-  </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+        <script src="js/main.js"></script>
 
-  <script src="js/main.js"></script>
-    
-  </body>
+    </body>
 </html>

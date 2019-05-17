@@ -18,4 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ClienteRepository extends CrudRepository<Cliente, Long>{
     
+    
+    
 }
